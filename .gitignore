@@ -1,0 +1,9 @@
+# git ignore
+dist/
+build/
+lib/
+native/
+textures/
+lwjgl.jar
+lwjgl_util.jar
+relief.png
