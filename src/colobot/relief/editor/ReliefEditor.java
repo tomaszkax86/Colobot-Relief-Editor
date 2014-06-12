@@ -22,7 +22,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 
-public class ReliefEditor extends JPanel implements MouseListener, MouseMotionListener, ActionListener
+public class ReliefEditor extends JPanel implements MouseListener,
+        MouseMotionListener, ActionListener
 {
     // UI elements
     private final JMenuBar menubar = new JMenuBar();
@@ -33,7 +34,8 @@ public class ReliefEditor extends JPanel implements MouseListener, MouseMotionLi
     private final JMenuItem saveAsMenuItem = new JMenuItem("Save as");
     private final JMenuItem exitMenuItem = new JMenuItem("Exit");
     
-    private final JFileChooser fileChooser = new JFileChooser(System.getProperty("user.dir"));
+    private final JFileChooser fileChooser
+            = new JFileChooser(System.getProperty("user.dir"));
     
     private File currentFile = null;
     private BufferedImage relief = null;
@@ -238,8 +240,11 @@ public class ReliefEditor extends JPanel implements MouseListener, MouseMotionLi
         {
             BufferedImage image = ImageIO.read(file);
 
-            if(image.getWidth() != 161) throw new RuntimeException("Invalid image width (not 161)");
-            if(image.getHeight() != 161) throw new RuntimeException("Invalid image height (not 161)");
+            if(image.getWidth() != 161)
+                throw new RuntimeException("Invalid image width (not 161)");
+            
+            if(image.getHeight() != 161)
+                throw new RuntimeException("Invalid image height (not 161)");
 
             relief = image;
             currentFile = file;
